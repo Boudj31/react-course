@@ -13,6 +13,8 @@ import Hook from "./page/Hook";
 import Todo from "./components/ToDoList/Todo";
 import Formulaire from "./page/Formulaire";
 import Redux from "./page/Redux";
+import Private from "./page/Private";
+import ProtectedRoute from "./router/ProtectedRoute";
 
 function App() {
 
@@ -59,6 +61,9 @@ function App() {
             <li>
                 <Link to="/redux">Redux</Link>
             </li>
+            <li>
+                <Link to="/private">Private</Link>
+            </li>
         </ul>
       </nav>
 
@@ -103,6 +108,9 @@ function App() {
              <Route path="/redux">
                  <Redux />
              </Route>
+             <ProtectedRoute path="/private" redirect={"/introduction"}>
+                 <Private />
+             </ProtectedRoute>
          </Switch>
      </section>
 
