@@ -1,8 +1,8 @@
-import { AUGMENTER, DIMINUER} from "../actionType";
+import { AUGMENTER, DIMINUER } from "../actionType";
 
 export function augmenter() {
-    // action = {}
-    return { type: AUGMENTER }
+  // action
+  return { type: AUGMENTER }
 }
 
-export const diminuer = () => ({type: DIMINUER});
+export const diminuer = () => ({ type: DIMINUER });

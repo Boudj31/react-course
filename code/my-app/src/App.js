@@ -15,6 +15,7 @@ import Formulaire from "./page/Formulaire";
 import Redux from "./page/Redux";
 import Private from "./page/Private";
 import ProtectedRoute from "./router/ProtectedRoute";
+import AuthentificationForm from "./components/Authentification/AuthentificationForm";
 
 function App() {
 
@@ -62,6 +63,9 @@ function App() {
                 <Link to="/redux">Redux</Link>
             </li>
             <li>
+                <Link to="/authentification">Se Connecter</Link>
+            </li>
+            <li>
                 <Link to="/private">Private</Link>
             </li>
         </ul>
@@ -107,6 +111,9 @@ function App() {
              </Route>
              <Route path="/redux">
                  <Redux />
+             </Route>
+             <Route path="/authentification">
+                 <AuthentificationForm />
              </Route>
              <ProtectedRoute path="/private" redirect={"/introduction"}>
                  <Private />
