@@ -1,0 +1,184 @@
+title.website: Stock Manager
+
+# Buton 
+btn:
+    add: Ajouter
+    back: Retour
+    edit: Modifier
+
+    #infobulle
+    tooltip: 
+        show: Visualiser
+        edit: Modifier
+        delete: Supprimer
+
+#Accessibility
+accessibility:
+    tooltip:
+        constrated: Contrasté
+        dyslexic: Dyslexic
+
+#Navigation 
+nav-list:
+    membership: Adhésions
+    computer: Ordinateurs
+    contact: Contacts
+    company: Sociétés
+    statistics: Statistiques
+    data: Données
+    accounts: Comptabilité
+    logout: Déconnexion
+
+# Default
+home:
+    title:
+        page: Accueil
+        dashbord: Dashbord
+        computers: Ordinateurs
+    description:
+        dashbord: Quelques statistiques.
+        computers: Les quatre derniers matériels.
+    stats:
+        somme: Somme Total
+        member: Nombre d'adhérents
+        nbComputersFixe: Nombre d'Ordinateurs fixes
+    sponsor: Donateur
+
+
+# Contact
+contact:
+    index:
+        title-page: Liste des contacts
+        title: Contact
+        desc: Liste des contacts
+
+        table: 
+            nomPrenom: Nom Prénom
+            tel: Téléphone
+            adresse: Adresse
+            city: Ville
+            codePostale: CP
+            comment: Commentaires
+            actions: Actions
+            noFounds: Aucun contact pour le moment 
+    show:
+        title-page: Contact
+        title: Aperçu Contact
+        desc: Liste des contacts
+
+        info: 
+            nomPrenom: Nom Prénom
+            motif: Motif
+            comment: Commentaire
+            phone: Téléphone
+            mail: Email
+            adresse: Adresse
+            adresseComplement: Complément d'adresse
+            city: Ville
+            codePostale: Code Postal
+    new:
+        title: Ajouter un nouveau contact
+
+    edit:
+        title: Modifer un contact
+
+# Société
+society:
+    index:
+        title-page: Liste des sociétés
+        title: Société
+        desc: Liste des sociétés
+
+        table: 
+            name: Identité
+            raisonSocial: Raison sociale
+            mail: Email
+            phone: Téléphone
+            adresse: Adresse
+            cpVille: CP - Ville
+            actions: Actions
+            noFounds: Aucune société pour le moment 
+    show:
+        title: Aperçu de la société
+
+        info:
+            title: Echanges
+            name: Représentant
+            phone: Téléphone
+            comment: Commentaire
+            commentNoFounds: Aucun commentaire pour le môment
+    new:
+        title: Ajouter une nouvelle entreprise
+
+    edit:
+        title: Modifier une Entreprise
+
+#Ordinateurs
+computers:
+    index:
+        title-page: Inventaire des ordinateurs
+        title: Ordinateur
+        desc: Inventaire des ordinateurs
+
+        table:
+            serial: Numéro de série
+            date: Date de réception
+            status: Status
+            type: Type
+            comment: Commentaire
+            actions: Actions
+            noFounds: Aucun ordinateur pour le moment
+    show:
+        title-page: Ordinateurs
+        title: Aperçu Ordinateurs
+
+        info:
+            serial: Numéro de série
+            date: Date de réception
+            type: Type
+            comment: Commentaire
+    new:
+        title: Ajouter un nouveau matériel
+
+    edit:
+        title: Modifer un matériel
+
+#Adhésions
+member:
+    index:
+        title-page: Liste des adhésions
+        title: Adhésion
+        desc: Liste des adhésions
+
+    table:
+        name: Nom
+        date: Date
+        type: Type
+        mail: Mail
+        phone: Téléphone
+        computer: Ordinateurs
+        amount: Montant
+        actions: Actions
+        noFounds: Aucune adhésions pour le moment
+    
+    show:
+        title-page: Ordinateurs
+        title: Aperçu Ordinateurs
+
+        info:
+            serial: Numéro de série
+            date: Date de réception
+            type: Type
+            comment: Commentaire
+    new:
+        title: Ajouter une adhésion
+
+    edit:
+        title: Modifier une adhésions
+
+
+
+
+
+    
+

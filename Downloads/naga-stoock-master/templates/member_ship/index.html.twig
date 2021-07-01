@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - {{'member.index.title-page'| trans}}{% endblock %}
+
+{% block body %}
+	<h1 class="title">{{'member.index.title'| trans}}</h1>
+	<p class="desc">{{'member.index.desc'| trans}}</p>
+
+	{# Alert notification #}
+	{% include "notification.html.twig" %}
+
+	{# Contenue #}
+	<div class="card card-padding">
+
+		<div class="contact-header margin-b">
+			<a href="{{ path('member_ship_new') }}" class="btn btn-secondary btn-radius">
+				<i class="fas fa-plus"></i>
+				{{'btn.add'| trans}}
+			</a>
+            {{render(controller('App\\Controller\\MemberShipController::getSearchMemberForm'))}}
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{'member.table.name'| trans}}</th>
+					<th>{{'member.table.date'| trans}}</th>
+					<th>{{'member.table.type'| trans}}</th>
+					<th>{{'member.table.mail'| trans}}</th>
+					<th>{{'member.table.phone'| trans}}</th>
+					<th>{{'member.table.computer'| trans}}</th>
+					<th>{{'member.table.amount'| trans}}</th>
+					<th>{{'member.table.actions'| trans}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for member_ship in member_ships %}
+					{%  set member = member_ship.member %}
+					<tr>
+						<td>
+							{% if member.title == "Monsieur" %}
+								Mr
+							{% else %}
+								Mme
+							{% endif %}
+							{{ member.lastname|upper }}
+							{{ member.firstname|slice(0, 1)|capitalize }}
+						</td>
+						<td>{{ member_ship.beginAt ? member_ship.beginAt|date('Y-m-d') : '' }}</td>
+						<td>{{ member_ship.type }}</td>
+						<td><a href="mailto:{{ member.mail }}">{{ member.mail }}</a></td>
+						<td><a href="tel:{{ member.phone }}">{{ member.phone }}</a></td>
+						<td>
+							{% if member_ship.computer %}
+								{{ member_ship.computer.serial }}
+							{% else %}
+								{{ "Pas d'ordinateur"}}
+							{% endif %}
+						</td>
+						<td>{{ member_ship.amount/ 100 }} €</td>
+						<td class="actions">
+							<a href="{{ path('member_ship_show', {'id': member_ship.id}) }}" data-infoBulle="{{'btn.tooltip.show'| trans}}"><i class="far fa-eye"></i></a>
+							<a href="{{ path('member_ship_edit', {'id': member_ship.id}) }}" data-infoBulle="{{'btn.tooltip.edit'| trans}}"><i class="far fa-edit"></i></a>
+							{{ include('member_ship/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="6">{{'member.table.noFounds'| trans}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{# display navigation #}
+		<div class="margin-tb">
+			{{ knp_pagination_render(member_ships) }}
+		</div>
+
+	</div>
+{% endblock %}

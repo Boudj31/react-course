@@ -1,0 +1,161 @@
+// Navbar
+// ==================
+.sidebar {
+    display: block;
+    width: size(255)+rem;
+    z-index: 100;
+
+    @include sm {
+        width: 4rem;
+    }
+
+    @include md {
+        width: 4rem;
+    }
+
+    // .sidebar-col {
+    //     position: fixed;
+    //     display: flex;
+    //     flex-direction: column;
+    //     width: size(255)+rem;
+    //     min-height: 100vh;
+    //     overflow: hidden;
+
+    //     @include md {
+    //         width: 4rem;
+    //         margin: 10px 5px;
+    //     }
+    // }
+}
+
+.sidebar-menu {
+    overflow: hidden;
+    position: fixed;
+    width: size(255)+rem;
+    min-height: 100vh;
+    font-weight: 600;
+    transition: all 200ms ease-out;
+
+    @include sm {
+        border-radius: 5px;
+        width: 4.3rem;
+    }
+
+    @include md {
+        border-radius: 5px;
+        width: 4.3rem;
+    }
+
+    ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 2rem 0;
+
+        .nav-items-list {
+            width: 100%;
+            position: relative;
+            padding: 0 size(5)+rem;
+
+            a {
+                position: relative;
+                display: block;
+                display: flex;
+                width: 100%;
+                transition: all .3s ease-out;
+
+                &:hover {
+                    background-color: #2E3B58;
+                    color: var(--white);
+                    border-radius: size(4)+rem;
+                }
+
+                i {
+                    display: block;
+                    position: relative;
+                    font-size: size(17)+rem;
+                    min-width: size(60)+rem;
+                    height: size(60)+rem;
+                    text-align: center;
+                    line-height: size(60)+rem;
+                }
+
+                span {
+                    display: flex;
+                    text-align: start;
+                    align-items: center;
+                    justify-content: center;
+                    white-space: nowrap;
+
+                    @include md {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-weight: 700;
+    font-size: size(20)+rem;
+    margin-bottom: size(46)+rem;
+
+    @include md {
+        strong {
+            display: none;
+        }
+    }
+
+    img {
+        width: size(80)+rem;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: size(20)+rem;
+
+        @include md {
+            width: size(35)+rem;
+        }
+    }
+}
+
+.nav-items-profile {
+    position: absolute;
+    bottom: 0;
+
+    @include md {
+        display: none;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        display: flex;
+        width: 100%;
+
+        i {
+            display: block;
+            position: relative;
+            font-size: size(17)+rem;
+            min-width: size(60)+rem;
+            height: size(60)+rem;
+            text-align: center;
+            line-height: size(60)+rem;
+        }
+
+        span {
+            display: flex;
+            text-align: start;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+        }
+    }
+
+}

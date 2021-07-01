@@ -1,0 +1,152 @@
+// Pages d'accueil
+// ==================
+.section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: size(40)+rem;
+
+    &-header {
+        display: flex;
+        flex-flow: column wrap;
+        margin-bottom: size(20)+rem;
+    }
+
+    &-title {
+        font-weight: 700;
+        font-size: size(20)+rem;
+        margin-bottom: size(8)+rem;
+    }
+}
+
+// Statistique
+.stats {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+
+    &-items {
+        background-color: var(--white);
+        width: calc(100% / 3);
+        margin: 0 size(8)+rem;
+        padding: size(20)+rem;
+        border-radius: size(5)+rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .items {
+        &-icons {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: size(15)+rem;
+            border-radius: size(5)+rem;
+            font-size: size(20)+rem;
+        }
+
+        &-text {
+            margin-top: size(15)+rem;
+            font-weight: 600;
+
+            p {
+                margin-bottom: size(15)+rem;
+            }
+
+            strong {
+                font-size: size(20)+rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+// Ordinateurs
+.computers {
+
+    &-items {
+        margin-bottom: size(20)+rem;
+        background-color: var(--white);
+        border-radius: size(5)+rem;
+        padding: size(10)+rem;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+    }
+
+    &-items:hover {
+        transform: scale(1.03);
+    }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .elements {
+            padding: size(20)+rem size(10)+rem;
+
+            &:last-child {
+                margin-right: size(10)+rem;
+
+                a:hover {
+                    font-weight: 600;
+                }
+            }
+
+            p {
+                font-size: .7rem;
+                opacity: .7;
+            }
+
+            span:nth-child(1),
+            span:nth-child(2) {
+                font-weight: 600;
+            }
+
+            &-logo {
+                width: 8%;
+                max-width: size(90)+rem;
+                min-width: size(80)+rem;
+                background-color: var(--primary);
+                border-radius: size(5)+rem;
+                color: var(--white);
+                text-align: center;
+                font-size: size(20)+rem;
+            }
+
+            &-serial {
+                width: 30%;
+
+                p {
+                    margin-top: size(4)+rem;
+                }
+            }
+
+            &-date {
+                width: 31%;
+            }
+
+            &-status {
+                width: 31%;
+            }
+
+            .items-status {
+                display: inline-block !important;
+                font-size: size(12)+rem;
+                padding: size(10)+rem size(15)+rem;
+                border-radius: size(5)+rem;
+
+                @include md {
+                    font-size: size(10)+rem;
+                }
+            }
+        }
+    }
+}

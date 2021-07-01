@@ -1,0 +1,47 @@
+// Btn
+// ==================
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    font-weight: 400;
+    vertical-align: middle;
+    border: none;
+    padding: size(10)+rem size(20)+rem;
+    font-size: var(--font-size);
+    transition: all .3s ease-in-out;
+    background-color: transparent;
+
+
+    // Btn color
+    &-primary {
+        background-color: var(--btn-primary);
+        border-color: var(--btn-primary);
+        color: var(--btn-color);
+    }
+
+    &-secondary {
+        background-color: var(--btn-secondary);
+        border-color: var(--btn-secondary);
+        color: var(--btn-color);
+    }
+
+    &-third {
+        background-color: var(--btn-third);
+        border-color: var(--btn-third);
+        color: var(--btn-color);
+    }
+
+    // Btn hover
+    &-secondary:hover {
+        background-color: var(--btn-secondary-hover);
+    }
+
+    &-third:hover {
+        background-color: var(--btn-third-hover);
+    }
+
+    &-radius {
+        border-radius: size(5)+rem;
+    }
+}

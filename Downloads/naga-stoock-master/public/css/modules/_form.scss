@@ -1,0 +1,45 @@
+// Formulaire
+// ==================
+.form {
+    &-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: size(15)+rem;
+    
+        > label {
+            padding: size(15)+rem 0;
+        }
+    }
+}
+
+input, 
+textarea {
+    padding: size(10)+rem size(15)+rem;
+    font-size: size(12)+rem;
+    color: var(--dark);
+    border: none;
+    background-color: var(--light-grey);
+    outline: 0;
+}
+
+textarea {
+    padding: size(20)+rem size(15)+rem !important;
+}
+
+select {
+    appearance: none;
+    background: var(--light-grey) url(../../images/triangle.png) no-repeat right size(15)+rem center;
+    background-size: size(9)+rem;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+
+    &:focus {
+      color: black;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+}

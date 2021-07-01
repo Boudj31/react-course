@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat des recherches
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="title margin-b">Nombre de résultat de votre recherche : {{ search_contact | length }}</h1>
+
+	<!--==== Card ====-->
+	<div class="card card-padding">
+
+		<div class="contact-header margin-b">
+			<a href="{{ path('contact_new') }}" class="btn btn-secondary btn-radius">
+				<i class="fas fa-plus"></i> Ajouter
+			</a>
+		    <a href="{{ path('contact_index') }}" class="btn btn-third btn-radius">{{'btn.back'| trans}}</a>
+
+		</div>
+    
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nom Prénom</th>
+					<th>Courriel</th>
+					<th>Téléphone</th>
+					<th>Adresse</th>
+					<th>Ville</th>
+					<th>CP</th>
+					<th>Commentaires</th>
+					<th>Actions</th>
+		
+				</tr>
+			</thead>
+			<tbody>
+				{% for contact in search_contact %}
+					<tr>
+						<td>
+							{% if contact.title == "Monsieur" %}
+								Mr
+							{% else %}
+								Mme
+							{% endif %}
+							{{ contact.lastname|upper }} {{ contact.firstname|slice(0, 1)|capitalize }}
+						</td>
+						<td>{{ contact.mail }}</td>
+						<td>{{ contact.phone }}</td>
+						<td>{{ contact.adress ? contact.adress.adressLine1 : ""}}</td>
+						<td>{{ contact.adress ? contact.adress.city : ""}}</td>
+						<td>{{ contact.adress ? contact.adress.zipCode : ""}}</td>
+						<td>{{ contact.comment|length > 25 ? contact.comment|slice(0, 25)~'...' : contact.comment }}</td>
+				
+
+						<td class="actions">
+							<a href="{{ path('contact_show', {'id': contact.id}) }}"><i class="far fa-eye"></i></a>
+							<a href="{{ path('contact_edit', {'id': contact.id}) }}"><i class="far fa-edit"></i></a>
+							{{ include('contact/_delete_form.html.twig') }}
+						</td>
+					</tr>						
+				{% else %}
+					<tr>
+						<td colspan="9">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+
+{% endblock %}

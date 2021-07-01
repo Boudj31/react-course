@@ -1,0 +1,184 @@
+title.website: Azione Gestione
+
+# Buton 
+btn:
+    add: Add
+    back: Back
+    edit: Edit
+
+    #infobulle
+    tooltip: 
+        show: View
+        edit: Edit
+        delete: Delete
+
+#Accessibility
+accessibility:
+    tooltip:
+        constrated: Daltonic
+        dyslexic: Dyslexic
+
+#Navigation 
+nav-list:
+    membership: Adesione
+    computer: Computers
+    contact: Contatto
+    company: Impresa 
+    statistics: Statisticas
+    data: Dati
+    accounts: Ragioneria
+    logout: Sconnettere 
+
+# Default
+home:
+    title:
+        page: Servizio
+        dashbord: Quadro di comando
+        computers: Computers
+    description:
+        dashbord: Alcune statistiche
+        computers: Gli ultimi quattro computer
+    stats:
+        somme: Somma totale
+        member: Numero di membri
+        nbComputersFixe: Numero di computer
+    sponsor:  Donatore
+    
+
+# Contact
+contact:
+    index:
+        title-page: Lista dei contatti
+        title: Contatto 
+        desc: Lista dei contatti
+
+        table: 
+            nomPrenom: Cognome Nome
+            tel: Telefono
+            adresse: Indirizzo
+            city: Città
+            codePostale: Codice postale
+            comment: Commento
+            actions: Azioni
+            noFounds: Nessun risultato 
+    show:
+        title-page: Contatto
+        title: Visualizza Contatto
+        desc: Lista dei contatti
+
+        info: 
+            nomPrenom: Cognome Nome
+            motif: Modello
+            comment: Commento
+            phone: Telefono
+            mail: email
+            adresse: Indirizzo
+            adresseComplement: Indirizzo 2
+            city: Città
+            codePostale: Codice postale
+    new:
+        title: Nuovo contatto
+
+    edit:
+        title: Modifica il contatto
+
+# Société
+society:
+    index:
+        title-page: Lista dei Impresa 
+        title: Impresa
+        desc: Lista dei Impresa 
+
+        table: 
+            name:  Identità
+            raisonSocial: Raison sociale
+            mail: Email
+            phone: Téléphone
+            adresse: Adresse
+            cpVille: CP - Ville
+            actions: Actions
+            noFounds: Nessun risultato 
+    show:
+        title: Aperçu de la société
+
+        info:
+            title: Echanges
+            name: Représentant
+            phone: Téléphone
+            comment: Commentaire
+            commentNoFounds: Nessun risultato
+    new:
+        title: Ajouter une nouvelle entreprise
+
+    edit:
+        title: Modifier une Entreprise
+
+#Ordinateurs
+computers:
+    index:
+        title-page: Inventaire des ordinateurs
+        title: Ordinateur
+        desc: Inventaire des ordinateurs
+
+        table:
+            serial: Identifiant
+            date: Date de réception
+            status: Status
+            type: Type
+            comment: Commentaire
+            actions: Actions
+            noFounds: Nessun risultato
+    show:
+        title-page: Ordinateurs
+        title: Aperçu Ordinateurs
+
+        info:
+            serial: Numéro de série
+            date: Date de réception
+            type: Type
+            comment: Commentaire
+    new:
+        title: Ajouter un nouveau matériel
+
+    edit:
+        title: Modifer un matériel
+
+#Adhésions
+member:
+    index:
+        title-page: Liste des adhésions
+        title: Adhésion
+        desc: Liste des adhésions
+
+    table:
+        name: Nom
+        date: Date
+        type: Type
+        mail: Mail
+        phone: Téléphone
+        computer: Ordinateurs
+        amount: Montant
+        actions: Actions
+        noFounds: Nessun risultato
+    
+    show:
+        title-page: Ordinateurs
+        title: Aperçu Ordinateurs
+
+        info:
+            serial: Numéro de série
+            date: Date de réception
+            type: Type
+            comment: Commentaire
+    new:
+        title: Ajouter une adhésion
+
+    edit:
+        title: Modifier une adhésions
+
+
+
+
+
+    
+

@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ComptaController!{% endblock %}
+
+{% block body %}
+
+ <h1 class="title">Compabilité</h1>
+ <p class="desc">Pour les sommes en chèques</p>
+	<div class="card card-padding">
+         <table class="table">
+           <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Montant</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cheque in cheques %}
+                <tr>
+                    <td>{{cheque.firstname}}</td>
+                    <td>{{cheque.lastname|upper}}</td>
+                    <td>{{cheque.date|date('Y-m-d')}}</td>
+                    <td>{{cheque.type}}</td>
+                    <td>{{cheque.amount / 100}} €</td>
+                    <td>{{cheque.total / 100}} €</td>
+                  	<td class="actions">
+                        {{ include('compta/_deletecheque_form.html.twig') }}
+			           		</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+    	<div class="inner margin-tb">
+			<a href="{{ path('compta') }}" class="btn btn-third btn-radius">Retour</a>
+    </div>
+    
+    	<div class="margin-tb">
+			{{ knp_pagination_render(cheques) }}
+		</div>
+
+    </div>
+{% endblock %}

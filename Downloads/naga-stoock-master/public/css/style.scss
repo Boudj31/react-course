@@ -1,0 +1,125 @@
+// Variables
+// ==================
+:root {
+    --primary: #2E3B58;
+    --secondary: #20C997;
+    --dark: #111111;
+    --white: #fff;
+    --light-grey: #F2F3F5;
+    --line-gray: #E0E2E1;
+    --input-header: #e2E8F0;
+    --font-family: 'Open Sans', sans-serif;
+    --font-size: 15px;
+    
+    // Color Btn
+    --btn-color: #fff;
+    --btn-primary: #0acf97;
+    --btn-primary-hover: #079b71;
+    --btn-primary-shadow: #068d67ea;
+    --btn-secondary: #fa5c7c;
+    --btn-secondary-hover: #db516c;
+    --btn-secondary-shadow: #db516dbe;
+    --btn-third: #3f80ea;
+    --btn-third-hover: #306bca;
+    --btn-third-shadow: #306bcaec;
+}
+
+
+// Outils
+// ==================
+@import 'tools/reset';
+@import 'tools/functions';
+@import 'tools/media-queries';
+@import 'tools/typography';
+@import 'tools/animation';
+
+// Fonts
+// ==================
+@import 'tools/fonts';
+
+
+
+// Generic
+// ==================
+body {
+    background-color: var(--light-grey);
+    font-family: 'Open Sans';
+    font-size: var(--font-size);
+    color: var(--dark);
+    min-height: 100vh;
+
+    transition: background-color 1s;
+    scroll-behavior: smooth !important;
+
+    @include sm {
+        --font-size: 11px;
+        font-size: var(--font-size);
+    }
+
+    @include md {
+        --font-size: 12px;
+        font-size: var(--font-size);
+    }
+}
+
+.wb-home {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    transition: flex-grow 200ms ease-in-out, -webkit-box-flex 200ms ease-in-out, -webkit-flex-grow 200ms ease-in-out;
+    transition: flex-grow 200ms ease-in-out;
+    transition: flex-grow 200ms ease-in-out, -webkit-box-flex 200ms ease-in-out, -webkit-flex-grow 200ms ease-in-out, -ms-flex-positive 200ms ease-in-out;
+
+    #main {
+        flex: 1;
+        transition: flex-grow 200ms ease-in-out, -webkit-flex-shrink 200ms ease-in-out, -webkit-flex-shrink 200ms ease-in-out, -webkit-box-flex 200ms ease-in-out, -webkit-flex-grow 200ms ease-in-out;
+        transition: flex-shrink 200ms ease-in-out, flex-grow 200ms ease-in-out;
+        transition: flex-shrink 200ms ease-in-out, flex-grow 200ms ease-in-out, -webkit-flex-shrink 200ms ease-in-out, -webkit-flex-shrink 200ms ease-in-out, -ms-flex-negative 200ms ease-in-out, -webkit-box-flex 200ms ease-in-out, -webkit-flex-grow 200ms ease-in-out, -ms-flex-positive 200ms ease-in-out;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1140px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: size(50)+rem size(20)+rem;
+    overflow: hidden;
+
+    @include md {
+        max-width: 1040px;
+    }
+
+}
+
+
+
+// Modules
+// ==================
+@import 'modules/btn';
+@import 'modules/btn-auth';
+@import 'modules/navbar';
+@import 'modules/header';
+@import 'modules/table';
+@import 'modules/card';
+@import 'modules/margin';
+@import 'modules/form';
+@import 'modules/radius';
+@import 'modules/notification';
+@import 'modules/infoBulle';
+@import 'modules/breadcrumb';
+@import 'modules/settings';
+@import 'modules/translation';
+
+
+// Pages
+// ==================
+@import 'pages/auth';
+@import 'pages/main';
+@import 'pages/contact';
+@import 'pages/show';
+@import 'pages/computer';
+@import 'pages/facture';
+@import 'pages/society';

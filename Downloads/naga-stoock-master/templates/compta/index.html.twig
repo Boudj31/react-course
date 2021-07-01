@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ComptaController!{% endblock %}
+
+{% block body %}
+
+<section class="section">
+    <header class="section-header">
+        <h2 class="section-title">Comptabilité</h2>
+        <p>Consulter le suivi des transactions</p>
+    </header>
+    <ul class="stats">
+        <li class="stats-items">
+            <a href="{{path('cash')}}">
+            <div class="items-icons">
+              <i class="fas fa-euro-sign"></i>
+            </div>
+            <div class="items-text">
+                <strong>Cash</strong>
+            </div>
+        </a>
+        </li>
+        <li class="stats-items">
+            <a href="{{path('cheque')}}">
+            <div class="items-icons">
+                <a href="{{path('cheque')}}"><i class="fas fa-money-check-alt"></i>
+            </div>
+            <div class="items-text">
+                <strong>Cheque</strong>
+            </div>
+        </a>
+        </li>
+    </ul>
+</section>
+{% endblock %}

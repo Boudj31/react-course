@@ -1,0 +1,158 @@
+// Settings
+// ==================
+.web-settings {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+        width: size(20)+rem;
+        color: #94949f;
+        cursor: pointer;
+    }
+
+    .btn-accessibility {
+        margin-right: size(10)+rem;
+    }
+
+    .active-access {
+        fill:  #ff0 !important;
+        stroke:  #ff0 !important;
+    }
+}
+
+.dislexic {
+    font-family: 'Open-Dyslexic Roman' !important;
+}
+
+.accessibility {
+
+    --primary: #2E3B58;
+    --secondary: #20C997;
+    --dark: #ff0 !important;
+    --white: #080808 !important;
+    --light-grey: #000 !important;
+    --line-gray: #E0E2E1;
+    --input-header: #e2E8F0;
+
+    // Table
+    .table {
+        border: 1px solid #e3ebf6;
+        background-color: white;
+        color: var(--dark);
+
+        thead th {
+            background-color: var(--light-grey);
+            color: var(--dark);
+        }
+
+        tbody tr {
+            background-color: var(--light-grey);
+
+            &:nth-child(2n) {
+                background-color: #0b0b0b;
+            }
+        }
+
+        th,
+        td {
+            background: var(--light-grey) !important;
+        }
+    }
+
+    // Menu
+    .sidebar-menu ul .nav-items-list a:hover {
+        background-color: #1C1C24;
+        color: var(--dark);
+        border-radius: 0.25rem;
+    }
+    
+    // Info-bulle
+    [data-infoBulle]{
+        &::before {
+            background-color: var(--dark);
+            color: var(--light-grey); 
+        }
+
+        &::after {
+            border-top: 5px solid var(--dark);
+        }
+    }
+
+    // Pagination
+    .page-item.disabled {
+        background-color: #000;
+    }
+
+    .page-item:hover {
+        background-color: #2f2f2f;
+    }
+
+    .active,
+    .lang .active-lang {
+        border: 1px solid #FFF !important;
+        background-color: #ff0 !important;
+        color: #000;
+    }
+
+    // Home 
+    .show-card,
+    select,
+    .stats .items-icons,
+    .computers-wrapper .elements-logo,
+    .society-phone strong {
+        background-color: var(--light-grey);
+        color: var(--dark);
+    }
+
+    .society-phone strong {
+        background: var(--white);
+    }
+
+    input, 
+    textarea, 
+    select,
+    .card,
+    .stats-items,
+    .show-card,
+    .computers-items,
+    .computers-wrapper .elements-logo,
+    .stats .items-icons,
+    .topbar-lang {
+        border: 1px solid #FFF;
+    }
+
+    select {
+        background: var(--light-grey) url(../../images/triangle-contrast.png) no-repeat right 0.9375rem center;
+        background-size: size(9)+rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        background-color: var(--dark);
+        color: var(--light-grey);
+        transition: all .3s cubic-bezier(.25, 1.15, .35, 1.15);
+
+        &:hover {
+            background-color: rgb(212, 212, 6) !important;
+        }
+    }
+
+    .btn-third,
+    .donne,
+    .asso, 
+    .stock,
+    .demonte {
+        background-color: var(--light-grey);
+        border: 1px solid var(--dark);
+        color: var(--dark);
+        transition: all .3s cubic-bezier(.25, 1.15, .35, 1.15);
+
+        &:hover {
+            background-color: var(--dark);
+            color: var(--light-grey);
+        }
+    }
+
+}

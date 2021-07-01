@@ -1,0 +1,184 @@
+title.website: Stock Manager
+
+# Buton 
+btn:
+    add: Add
+    back: Back
+    edit: Edit
+
+    #infobulle
+    tooltip: 
+        show: View
+        edit: Edit
+        delete: Delete
+
+#Accessibility
+accessibility:
+    tooltip:
+        constrated: Daltonic
+        dyslexic: Dyslexic
+
+#Navigation 
+nav-list:
+    membership: Membership
+    computer: Computers
+    contact: Contacts
+    company: Company
+    statistics: Statistics
+    data: Data
+    accounts: Accounts
+    logout: Logout
+
+# Default
+home:
+    title:
+        page: Home
+        dashbord: Dashbord
+        computers: Computers
+    description:
+        dashbord: Some statistics.
+        computers: The last four materials.
+    stats:
+        somme: Sum of money
+        member: Number membership
+        nbComputersFixe: Number computers
+    sponsor: Sponsor
+    
+
+# Contact
+contact:
+    index:
+        title-page: Contacts List
+        title: Contact
+        desc: Contacts List
+
+        table: 
+            nomPrenom: Lastname Firstname
+            tel: Phone
+            adresse: Address
+            city: City
+            codePostale: ZipCode
+            comment: Comment
+            actions: Actions
+            noFounds: No records founds 
+    show:
+        title-page: Contact
+        title: View Contact
+        desc: Contacts List
+
+        info: 
+            nomPrenom: Lastname Firstname
+            motif: Motif
+            comment: Comment
+            phone: Phone
+            mail: mail
+            adresse: Address
+            adresseComplement: Complement address
+            city: City
+            codePostale: Zip Code
+    new:
+        title: New Contact
+
+    edit:
+        title: Edit contact
+
+# Société
+society:
+    index:
+        title-page: List of Compagny
+        title: Compagny
+        desc: List of Compagny
+
+        table: 
+            name: Identity
+            raisonSocial: Sociale Name
+            mail: Email
+            phone: Phone
+            adresse: Adress
+            cpVille: PC- City
+            actions: Actions
+            noFounds: No compagny found 
+    show:
+        title: Survey of Compagny
+
+        info:
+            title: Exchange
+            name: Name
+            phone: Phone
+            comment: Comment
+            commentNoFounds: No comment found
+    new:
+        title: Add New compagny
+
+    edit:
+        title: Edit compagny
+
+#Ordinateurs
+computers:
+    index:
+        title-page: List of Computers
+        title: Computer
+        desc: List of Computers
+
+        table:
+            serial: Serial
+            date: Receive at 
+            status: Status
+            type: Type
+            comment: Comment
+            actions: Actions
+            noFounds: No computer found 
+    show:
+        title-page: Computer
+        title: Survey of computer
+
+        info:
+            serial: Serial
+            date: Receive at 
+            type: Type
+            comment: Comment
+    new:
+        title: Add new computer
+
+    edit:
+        title: Edit computer
+
+#Adhésions
+member:
+    index:
+        title-page: List of memberships
+        title: memberships
+        desc: List of memberships
+
+    table:
+        name: Name
+        date: Date
+        type: Type
+        mail: Mail
+        phone: Phone
+        computer: Computer
+        amount: Amount
+        actions: Actions
+        noFounds: No membership found
+    
+    show:
+        title-page: Membership
+        title: Survey of membership
+
+        info:
+            serial: Numéro de série
+            date: Date de réception
+            type: Type
+            comment: Commentaire
+    new:
+        title: Add membership
+
+    edit:
+        title: Edit membership
+
+
+
+
+
+    
+

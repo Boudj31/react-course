@@ -1,0 +1,159 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StatistiqueController!{% endblock %}
+
+{% block body %}
+
+<h1 class="title margin-b">Stats</h1> 
+
+      		<table class="table">
+			<thead>
+				<tr>
+					<th>Type d'adhésion</th>
+					<th>Nombre</th>
+                    <th>Montant total</th>
+                    <th>Montant Moyen</th>
+		
+				</tr>
+            </thead>
+       			<tbody>
+                    <tr>
+						<td> Adhésions 3 mois GEM </td>
+						<td>{{ totalMemberGem }}</td>
+                        <td>{{totalPriceGem / 100}} €</td>
+                        <td>{{(avgPriceGem / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>	
+
+					<tr>
+						<td>Adhésion RSA</td>
+						<td>{{ totalMemberRSA }}</td>
+                        <td>{{totalPriceRSA / 100}} €</td>
+                        <td>{{(avgPriceRSA / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>	
+					
+			  		<tr>
+						<td>Adhésion SMIC</td>
+						<td>{{ totalMemberSMIC }}</td>
+                        <td>{{totalPriceSMIC / 100}} €</td>
+                        <td>{{(avgPriceSMIC / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>
+
+					<tr>
+						<td>Adhésion bénevole</td>
+						<td>{{ totalMemberBenevole }}</td>
+                        <td>{{ totalPriceBenevole / 100}} €</td>
+                        <td> {{(avgPriceBenevole / 100)|number_format(2, '.', ',') }}€</td>
+					</tr>
+					<tr>
+						<td>Adhésion installation Linux</td>
+						<td>{{ totalMemberLinux }}</td>
+                        <td>{{totalPriceLinux / 100}} €</td>
+                        <td>{{(avgPriceLinux / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>	
+	
+					<tr>
+						<td>Adhésion sup SMIC</td>
+						<td>{{ totalMemberSup }}</td>
+                        <td>{{totalPriceSup / 100}} €</td>
+                        <td>{{(avgPriceSup / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>	
+					<tr>
+						<td>Don</td>
+						<td>{{ totalMemberDon }}</td>
+                        <td>{{totalPriceDon / 100}} €</td>
+                        <td>{{(avgPriceDon / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>
+					<tr>
+						<td>Vente</td>
+						<td>{{ totalMemberSales }}</td>
+                        <td>{{totalPriceSales / 100}} €</td>
+                        <td>{{(avgPriceSales / 100)|number_format(2, '.', ',')}} €</td>
+					</tr>		
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>Total</td>
+					<td>{{ memberTotal }}</td>
+					<td>{{ sumAmount / 100}} €</td>
+					<td>{{ (avgPrice/ 100)|number_format(2, '.', ',')}} €</td>
+				</tr>	
+
+			</tfoot>
+        </table>   <br><br>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre d'adhérents</th>
+					<th>Avec Ordinateur</th>
+					<th>Sans Ordinateur</th>
+		
+				</tr>
+            </thead>
+       			<tbody>
+					<tr>
+						<td>{{ member }}</td>
+						<td>{{memberWComputer}}</td>
+						<td>{{memberWoComputer}}</td>
+					</tr>						
+			</tbody>
+        </table>    <br><br>
+    
+        		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre d'Ordinateur Fixe</th>
+					<th>En Stock</th>
+                    <th>Donné</th>
+                    <th>Donné Asso</th>
+					<th>Démonté</th>
+		
+				</tr>
+            </thead>
+       			<tbody>
+					<tr>
+						<td>{{ sumComputer }}</td>
+						<td>{{ computerInStock }}</td>
+                        <td>{{ computerGiven }}</td>
+                        <td>{{ computerAsso }}</td>
+						<td>{{ computerBreak }}</td>
+					</tr>						
+			</tbody>
+		</table>  <br><br>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nombre d'Ordinateur Portable</th>
+					<th>En Stock</th>
+                    <th>Donné</th>
+                    <th>Donné Asso</th>
+					<th>Démonté</th>
+		
+				</tr>
+            </thead>
+       			<tbody>
+					<tr>
+						<td>{{ sumLComputer }}</td>
+						<td>{{ computerLInStock }}</td>
+                        <td>{{ computerLGiven }}</td>
+                        <td>{{ computerLAsso }}</td>
+						<td>{{ computerLBreak }}</td>
+					</tr>						
+			</tbody>
+        </table>  <br><br>
+        
+	<!--==== Formulaire ====-->
+	<p class="desc">Selectionner une date</p>
+    <div class="card card-padding">
+
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_widget(form) }}
+            <button class="btn btn-primary btn-radius">
+                {{ button_label|default('Envoyer !') }}
+            </button>
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

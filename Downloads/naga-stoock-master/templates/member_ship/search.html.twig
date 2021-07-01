@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Résultat des recherches
+{% endblock %}
+
+{% block body %}
+
+	<h1 class="title margin-b">Nombre de résultat de votre recherche :
+		{{ search_member_ship | length }}</h1>
+
+	<!--==== Card ====-->
+	<div class="card card-padding">
+
+		<div class="contact-header margin-b">
+			<a href="{{ path('member_ship_new') }}" class="btn btn-secondary btn-radius">
+				<i class="fas fa-plus"></i>
+				Ajouter
+			</a>
+		    <a href="{{ path('member_ship_index') }}" class="btn btn-third btn-radius">{{'btn.back'| trans}}</a>
+
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Date</th>
+					<th>Type</th>
+					<th>Mail</th>
+					<th>Téléphone</th>
+					<th>Ordinateurs</th>
+					<th>Montant</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for member_ship in search_member_ship %}
+				   {%  set member = member_ship.member %}
+					<tr>
+						<td>
+							{% if member.title == "Monsieur" %}
+								Mr
+							{% else %}
+								Mme
+							{% endif %}
+							{{ member.lastname|slice(0, 1)|capitalize }}
+							{{ member.firstname|upper }}
+						</td>
+						<td>{{ member_ship.beginAt ? member_ship.beginAt|date('Y-m-d') : '' }}</td>
+						<td>{{ member_ship.type }}</td>
+						<td>{{ member.mail }}</td>
+						<td>{{ member.phone }}</td>
+						<td>
+							{% if member_ship.computer %}
+								{{ member_ship.computer.serial }}
+							{% else %}
+								{{ "Pas d'ordinateur"}}
+							{% endif %}
+						</td>
+						<td>{{ member_ship.amount/ 100 }} €</td>
+						<td class="actions">
+							<a href="{{ path('member_ship_show', {'id': member_ship.id}) }}" data-infobulle="Voir">
+								<i class="far fa-eye"></i>
+							</a>
+							<a href="{{ path('member_ship_edit', {'id': member_ship.id}) }}" data-infobulle="Modifier">
+								<i class="far fa-edit"></i>
+							</a>
+							{{ include('member_ship/_delete_form.html.twig') }}
+						</td>
+					</tr>
+				{% else %}
+					<tr>
+						<td colspan="9">no records found</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+{% endblock %}

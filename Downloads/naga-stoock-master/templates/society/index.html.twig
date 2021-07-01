@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} - {{'society.index.title-page'| trans}}{% endblock %}
+
+{% block body %}
+    <h1 class="title">{{'society.index.title'| trans}}</h1>
+	<p class="desc">{{'society.index.desc'| trans}}</p>
+
+	{# Alert notification #}
+	{% include "notification.html.twig" %}
+
+	{# Contenue #}
+	<div class="card card-padding">
+
+		<div class="contact-header margin-b">
+			<a href="{{ path('society_new') }}" class="btn btn-secondary btn-radius">
+				<i class="fas fa-plus"></i> {{'btn.add'| trans}}
+			</a>
+            {{render(controller('App\\Controller\\SocietyController::getSearchSocietyForm'))}}
+		</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{'society.index.table.name'| trans}}</th>
+                <th>{{'society.index.table.raisonSocial'| trans}}</th>
+                <th>{{'society.index.table.mail'| trans}}</th>
+                <th>{{'society.index.table.phone'| trans}}</th>
+                <th>{{'society.index.table.adresse'| trans}}</th>
+				<th>{{'society.index.table.cpVille'| trans}}</th>
+                <th>{{'society.index.table.actions'| trans}}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for society in societies %}
+            <tr>
+                <td>{{ society.name }}</td>
+                <td>{{ society.representativeName }}</td>
+                <td>{{ society.representativeMail }}</td>
+                <td>{{ society.representativePhone }}</td>
+                <td>{{ society.adress.adressLine1 }}</td>
+				<td>{{ society.adress.zipCode }} - {{ society.adress.city }}</td>
+                <td class="actions">
+                	<a href="{{ path('society_show', {'id': society.id}) }}" data-infoBulle="{{'btn.tooltip.show'| trans}}"><i class="far fa-eye"></i></a>
+                    <a href="{{ path('society_edit', {'id': society.id}) }}" data-infoBulle="{{'btn.tooltip.edit'| trans}}"><i class="far fa-edit"></i></a>
+                    {{ include('society/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">{{'society.index.table.noFounds'| trans}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {# display navigation #}
+		<div class="margin-tb">
+			{{ knp_pagination_render(societies) }}
+		</div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}} - {{'computers.show.title-page'| trans}}
+{% endblock %}
+
+{% block body %}
+
+	{# Description #}
+	<h1 class="margin-tb title">{{'computers.show.title'| trans}}</h1>
+	<nav>
+		<ol class="breadcrumb">
+			<li>Home</li>
+			<li>Ordinateurs</li>
+			<li>{{ computer.serial }}</li>
+		</ol>
+	</nav>
+	
+	{# Contenue #}
+	<div class="card">
+		<div class="row margin-tb no-align-center">
+			<div class="left left-center">
+				{% if computer.type == "PC Fixe" %}
+					<img src="{{asset('images/pc-fixe.jpg')}}" alt="Pc fixe" class="image-computer">
+				{% elseif computer.type == "PC portable" %}
+					<img src="{{asset('images/pc-portable.jpg')}}" alt="Pc portable" class="image-computer">
+				{% else %}
+					<img src="{{asset('images/serveurs_1.png')}}" alt="Serveur" class="image-computer">
+				{% endif %}
+			</div>
+			<div class="right">
+				<h2>{{'computers.show.info.serial'| trans}} : {{ computer.serial }}</h2>
+				<div class="info">
+					<p class="info-status {{ computer.status|replace({'à':'a'})|replace({'é':'e'})|lower }} btn-radius">{{ computer.status }}</p>
+					<p>
+						<b>{{'computers.show.info.date'| trans}} : </b>
+						{{ computer.receivedAt ? computer.receivedAt|date('Y-m-d') : '' }}</p>
+					<p>
+						<b>{{'computers.show.info.type'| trans}} : </b>
+						{{ computer.type }}</p>
+					<p>
+						<b>{{'computers.show.info.comment'| trans}} : </b>
+					</p>
+					<p>
+						<span>{{ computer.comment }}</span>
+					</p>
+				</div>
+
+				{# Bouton #}
+				<div class="inner">
+					<a href="{{ path('computer_index') }}" class="btn btn-third btn-radius">{{'btn.back'| trans}}</a>
+
+					<a href="{{ path('computer_edit', {'id': computer.id}) }}" class="btn btn-primary btn-radius">{{'btn.edit'| trans}}</a>
+
+					<span class="btn btn-secondary btn-radius" style="padding: 8px;">{{ include('computer/_delete_form.html.twig') }}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
